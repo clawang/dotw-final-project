@@ -1,0 +1,232 @@
+html,
+body {
+    height: 100%;
+    overscroll-behavior-y: none;
+}
+
+#scroll-proxy {
+    height: 3000px;
+}
+
+#environment {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -ms-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    background: linear-gradient(0deg, rgba(244, 244, 244, 1) 44%, rgba(203, 219, 226, 1) 100%);
+}
+
+#content section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: 100%;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#first {
+    /*    background-image: url(wasquapa/wsp1-01.png);*/
+    /*    transform: translate3d( 0, 0, -790px) scale(2);*/
+    z-index: 50;
+}
+
+#flowers {}
+
+
+/*
+canvas {
+    width: 100%;
+}
+*/
+
+#second {
+    background-image: url(wasquapa/wsp2-01.png);
+    /*    transform: translate3d( 0, 0, -1580px) scale(3);*/
+    z-index: 49;
+}
+
+#fountain {
+    background-image: url(wasquapa/fountain-01.png);
+    opacity: 0.9;
+    /*    transform: translate3d( 0, 0, -1580px) scale(3);*/
+    z-index: 48;
+    /*    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 52%, rgba(198, 224, 221, 1) 100%);*/
+}
+
+#fountain2 {
+    opacity: 0.8;
+    z-index: 47;
+}
+
+#third {
+    background-image: url(wasquapa/wsp3-01.png);
+    /*    transform: translate3d( 0, 0, -1580px) scale(3);*/
+    z-index: 47;
+}
+
+#fourth {
+    background-image: url(wasquapa/wsp4-01.png);
+    z-index: 46;
+    /*    transform: translate3d( 0, 0, -2380px) scale(4);*/
+}
+
+#fifth {
+    background-image: url(wasquapa/wsp5-01.png);
+    z-index: 45;
+}
+
+#sixth {
+    background-image: url(wasquapa/wsp6-01.png);
+    z-index: 44;
+}
+
+#seventh {
+    background-image: url(wasquapa/wsp7-01.png);
+    z-index: 43;
+}
+
+#eighth {
+    background-image: url(wasquapa/wsp8-01.png);
+    z-index: 41;
+}
+
+#ninth {
+    background-image: url(wasquapa/wsp9-01.png);
+    z-index: 40;
+}
+
+.petal {
+    width: 30px;
+    position: absolute;
+    display: none;
+    /*    animation: fall 10s linear,
+sway 3s infinite alternate,
+blow-soft-right 10s ease-in;*/
+    z-index: 55;
+}
+
+.petal:nth-of-type(1) {
+    top: 20px;
+    left: 50%;
+}
+
+.petal:nth-of-type(2) {
+    top: 100px;
+    left: 20%;
+}
+
+.petal:nth-of-type(3) {
+    top: 20%;
+    left: 10%;
+}
+
+.petal:nth-of-type(4) {
+    top: 20%;
+    left: 30%;
+}
+
+.petal:nth-of-type(5) {
+    top: 10%;
+    left: 50%;
+}
+
+.petal:nth-of-type(6) {
+    top: 20%;
+    left: 20px;
+}
+
+@keyframes fall {
+    0% {
+        /*        top: 0*/
+    }
+    100% {
+        top: 100%
+    }
+}
+
+@keyframes sway-4 {
+    0% {
+        -webkit-transform: rotate(10deg)
+    }
+    40% {
+        -webkit-transform: rotate(43deg)
+    }
+    100% {
+        -webkit-transform: rotate(15deg)
+    }
+}
+
+@keyframes sway-1 {
+    0% {
+        -ms-transform: rotate(10deg);
+        transform: rotate(10deg)
+    }
+    40% {
+        -ms-transform: rotate(43deg);
+        transform: rotate(43deg)
+    }
+    100% {
+        -ms-transform: rotate(15deg);
+        transform: rotate(15deg)
+    }
+}
+
+@keyframes sway-2 {
+    0% {
+        -ms-transform: rotate(15deg);
+        transform: rotate(15deg)
+    }
+    40% {
+        -ms-transform: rotate(56deg);
+        transform: rotate(56deg)
+    }
+    100% {
+        -ms-transform: rotate(22deg);
+        transform: rotate(22deg)
+    }
+}
+
+@keyframes sway-3 {
+    0% {
+        -ms-transform: rotate(25deg);
+        transform: rotate(25deg)
+    }
+    40% {
+        -ms-transform: rotate(74deg);
+        transform: rotate(74deg)
+    }
+    100% {
+        -ms-transform: rotate(37deg);
+        transform: rotate(37deg)
+    }
+}
+
+@keyframes blow-soft-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 50%
+    }
+}
+
+@keyframes blow-soft-left {
+    0% {
+        margin-right: 0
+    }
+    100% {
+        margin-right: 50%
+    }
+}
