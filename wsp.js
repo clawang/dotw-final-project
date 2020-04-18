@@ -1,5 +1,5 @@
  $(document).ready(function () {
-     let delay = 0.2;
+     let delay = 0.3;
      $('#content').children().each(function () {
          $(this).addClass('loaded');
          $(this).css('animation-delay', delay + 's');
@@ -10,13 +10,16 @@
 
      let isTransitioning = true;
      setTimeout(function () {
+         $('#background').slideDown();
          isTransitioning = false;
-     }, 2350);
+     }, 2700);
 
      $(window).scroll(function () {
          var scroll = $(window).scrollTop();
          let index = 9;
-         if (isTransitioning === false) {
+         if (isTransitioning) {
+             $(document).scrollTop(0);
+         } else {
              $('#content').children().each(function () {
                  $(this).removeClass('loaded');
                  $(this).css('opacity', '1');
