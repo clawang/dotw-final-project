@@ -14,6 +14,8 @@ $(document).ready(function () {
 
     setTimeout(function () {
         $('#background1').slideDown();
+        $('#fifth').slideDown();
+        $('#sixth').slideDown();
     }, 1700);
 
     setTimeout(function () {
@@ -25,60 +27,78 @@ $(document).ready(function () {
 
     requestAnimationFrame(onScroll);
 
-    //    $(window).scroll(function () {
-    //        didScroll = true;
-    //    });
-    //
-    //    window.setInterval(function () {
-    //        if (didScroll) {
-    //            didScroll = false;
-    //            onScroll();
-    //        }
-    //    }, 25);
-
-    //    $(window).scroll($.throttle(100, function () {
-    //
-    //    }));
-
-    //    requestAnimationFrame(float);
 });
+
+const scrollLayers = [0, 2000, 3000, 5000, 6000, 8000];
+const transition = 2000;
 
 function onScroll() {
     var scroll = $(window).scrollTop();
     if (isTransitioning) {
         $(document).scrollTop(0);
     } else {
-        if (scroll === 0) {
+        if (scroll === scrollLayers[0]) {
             $('#background1').css('opacity', 1);
             $('#background2').css('opacity', 1);
             $('#background3').css('opacity', 1);
-        } else if (scroll < 1000) {
-            $('#background1').css('opacity', (1000 - scroll) / 1000);
+            $('#skyline1').css('opacity', 1);
+            $('#skyline2').css('opacity', 1);
+            $('#skyline3').css('opacity', 1);
+            $('#skyline4').css('opacity', 1);
+        } else if (scroll < scrollLayers[1]) {
+            $('#background1').css('opacity', (scrollLayers[1] - scroll) / transition);
             $('#background2').css('opacity', 1);
             $('#background3').css('opacity', 1);
-        } else if (scroll >= 1000 && scroll < 1500) {
+            $('#skyline1').css('opacity', (scrollLayers[1] - scroll) / transition);
+            $('#skyline2').css('opacity', 1);
+            $('#skyline3').css('opacity', 1);
+            $('#skyline4').css('opacity', 1);
+        } else if (scroll >= scrollLayers[1] && scroll < scrollLayers[2]) {
             $('#background1').css('opacity', 0);
             $('#background2').css('opacity', 1);
             $('#background3').css('opacity', 1);
-        } else if (scroll >= 1500 && scroll < 2500) {
+            $('#skyline1').css('opacity', 0);
+            $('#skyline2').css('opacity', 1);
+            $('#skyline3').css('opacity', 1);
+            $('#skyline4').css('opacity', 1);
+        } else if (scroll >= scrollLayers[2] && scroll < scrollLayers[3]) {
             $('#background1').css('opacity', 0);
-            $('#background2').css('opacity', (2500 - scroll) / 1000);
+            $('#background2').css('opacity', (scrollLayers[3] - scroll) / transition);
             $('#background3').css('opacity', 1);
-        } else if (scroll >= 2500 && scroll < 3000) {
+            $('#skyline1').css('opacity', 0);
+            $('#skyline2').css('opacity', (scrollLayers[3] - scroll) / transition);
+            $('#skyline3').css('opacity', 1);
+            $('#skyline4').css('opacity', 1);
+        } else if (scroll >= scrollLayers[3] && scroll < scrollLayers[4]) {
             $('#background1').css('opacity', 0);
             $('#background2').css('opacity', 0);
             $('#background3').css('opacity', 1);
             $('#fifth').css('opacity', 1);
-        } else {
+            $('#skyline1').css('opacity', 0);
+            $('#skyline2').css('opacity', 0);
+            $('#skyline3').css('opacity', 1);
+            $('#skyline4').css('opacity', 1);
+            $('#moon').css('opacity', 0);
+        } else if (scroll >= scrollLayers[4] && scroll < scrollLayers[5]) {
             $('#background1').css('opacity', 0);
             $('#background2').css('opacity', 0);
-            $('#background3').css('opacity', (4000 - scroll) / 1000);
+            $('#background3').css('opacity', (scrollLayers[5] - scroll) / transition);
             $('#fifth').css('opacity', 0);
+            $('#skyline1').css('opacity', 0);
+            $('#skyline2').css('opacity', 0);
+            $('#skyline3').css('opacity', (scrollLayers[5] - scroll) / transition);
+            $('#skyline4').css('opacity', 1);
+            $('#moon').css('opacity', (scroll - scrollLayers[4]) / transition);
+            console.log((scroll - scrollLayers[4]) / transition);
+        } else {
+            $('#background3').css('opacity', 0);
+            $('#skyline3').css('opacity', 0);
+            $('#moon').css('opacity', 1);
         }
 
         //sun positioning
-        if (scroll < 4000) {
-            angle = scroll / 35 + 5;
+        if (scroll < scrollLayers[4]) {
+            angle = scroll / 60 + 5;
             $('#fifth').css('transform', 'rotate(' + angle + 'deg)');
         }
 

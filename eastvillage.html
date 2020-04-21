@@ -8,6 +8,13 @@
 </head>
 
 <body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-moon-06" viewBox="0 0 31 32">
+                <path d="M15.881 1.588c-1.374 0-2.702 0.192-3.963 0.544 0.188-0.008 0.377-0.014 0.567-0.014 7.187 0 13.013 5.826 13.013 13.013s-5.826 13.013-13.013 13.013c-3.277 0-6.269-1.214-8.557-3.214 2.676 3.709 7.031 6.125 11.953 6.125 8.137 0 14.734-6.596 14.734-14.734s-6.596-14.734-14.734-14.734z"></path>
+            </symbol>
+        </defs>
+    </svg>
     <div id="box">
         <a href="index.html" id="back-button">BACK</a>
     </div>
@@ -16,27 +23,39 @@
             <section id="first"></section>
             <section id="second"></section>
             <section id="third"></section>
-            <section id="fourth"></section>
+            <section id="fourth">
+                <div id="skyline1"></div>
+                <div id="skyline2"></div>
+                <div id="skyline3"></div>
+                <div id="skyline4"></div>
+            </section>
         </div>
         <div id="fifth">
-    <div id="sun">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-<!--
+            <div id="sun">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div id="moon">
+            <svg class="icon icon-moon-06">
+                <use xlink:href="#icon-moon-06"></use>
+            </svg>
+        </div>
+        <!--
+        <div id="sixth">
     <img src="eastvillage/cloud1-02.png" id="cloud1">
-<img src="eastvillage/cloud2-03.png" id="cloud2">
-<img src="eastvillage/cloud3-04.png" id="cloud3">
-<img src="eastvillage/cloud4-05.png" id="cloud4">
--->
-
+    <img src="eastvillage/cloud2-03.png" id="cloud2">
+    <img src="eastvillage/cloud3-04.png" id="cloud3">
+    <img src="eastvillage/cloud4-05.png" id="cloud4">
 </div>
-        <div id="background1" class="background"></div>
-        <div id="background2" class="background"></div>
-        <div id="background3" class="background"></div>
-        <div id="background4" class="background"></div>
+-->
+        <div id="seventh">
+            <div id="background1"></div>
+            <div id="background2"></div>
+            <div id="background3"></div>
+            <div id="background4"></div>
+        </div>
     </div>
 
     <div id="scroll-proxy"></div>

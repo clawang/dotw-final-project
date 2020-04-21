@@ -82,31 +82,73 @@ body {
 }
 
 #fourth {
-    background-image: url(eastvillage/ev5-01.png);
+    /*    background-image: url(eastvillage/ev5-01.png);*/
     z-index: 44;
-    mix-blend-mode: multiply;
+}
+
+#fourth div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#skyline1 {
+    background: url(eastvillage/skyline1-01.png);
+    z-index: 43;
+}
+
+#skyline2 {
+    background: url(eastvillage/skyline2-01.png);
+    z-index: 42;
+}
+
+#skyline3 {
+    background: url(eastvillage/skyline3-01.png);
+    z-index: 41;
+}
+
+#skyline4 {
+    background: url(eastvillage/skyline4-01.png);
+    z-index: 40;
 }
 
 #fifth {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 40;
+    z-index: 39;
     transform: rotate(5deg);
     transform-origin: 50% 100%;
     background: lighten;
+    display: none;
     /*    mix-blend-mode: multiply;*/
 }
 
-#fifth img {
+#moon {
+    z-index: 38;
+    opacity: 0;
+}
+
+#moon svg {
+    fill: white;
     position: absolute;
+    width: 80px;
+    top: 50px;
+    left: 65%;
+    z-index: 38;
+    opacity: 0.7;
 }
 
 #sun {
     position: relative;
     top: 300px;
     left: 0px;
-    z-index: 40;
+    z-index: 39;
 }
 
 #sun div {
@@ -138,31 +180,50 @@ body {
     background: rgba(250, 219, 90, 0.1);
 }
 
+#sixth {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+    animation: float-left 60s linear infinite;
+}
+
+#sixth img {
+    position: absolute;
+}
+
 #cloud1 {
     top: 50px;
+    left: 30%;
     height: 10px;
-    animation: float-right 30s linear infinite;
 }
 
 #cloud2 {
     top: 150px;
+    left: 5%;
     height: 20px;
-    animation: float-right 25s linear infinite;
+    /*    animation: float-right 55s linear infinite;*/
 }
 
 #cloud3 {
     top: 100px;
+    left: 50%;
     height: 20px;
-    animation: float-left 20s linear infinite;
+    /*    animation: float-left 50s linear infinite;*/
 }
 
 #cloud4 {
     top: 200px;
+    left: 60%;
     height: 25px;
-    animation: float-left 30s linear infinite;
+    /*    animation: float-left 60s linear infinite;
+    */
 }
 
-.background {
+#seventh div {
     position: absolute;
     display: none;
     width: 100%;
@@ -190,7 +251,7 @@ body {
 }
 
 #scroll-proxy {
-    height: 4820px;
+    height: 9000px;
 }
 
 @keyframes fold-up {
@@ -207,6 +268,8 @@ body {
     }
 }
 
+
+/*
 @keyframes float-right {
     0% {
         left: -30%;
@@ -215,6 +278,7 @@ body {
         left: 100%;
     }
 }
+*/
 
 @keyframes float-left {
     0% {
