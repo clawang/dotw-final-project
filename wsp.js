@@ -1,9 +1,10 @@
  $(document).ready(function () {
-     let delay = 0.3;
+     const delays = [0.5, 0.7, 0.7, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.7]
+     let index = 0;
      $('#content').children().each(function () {
          $(this).addClass('loaded');
-         $(this).css('animation-delay', delay + 's');
-         delay += 0.2;
+         $(this).css('animation-delay', delays[index] + 's');
+         index++;
      });
 
      $('map').imageMapResize();
@@ -12,7 +13,7 @@
      setTimeout(function () {
          $('#background').slideDown();
          isTransitioning = false;
-     }, 2700);
+     }, 2200);
 
      $(window).scroll(function () {
          var scroll = $(window).scrollTop();

@@ -1,1 +1,9 @@
 # dotw-final-project
+
+For my final project, I want to create a tribute to New York City during this pandemic. Especially because we all had to unceremoniously leave halfway through the semester, I wanted to showcase the places in the city that I know and love and miss.
+
+The first location I will be drawing will be Washington Square Park. To me, it’s important because it’s the center of our campus but also it is (in my opinion) the best park in the city. My favorite is Washington Square Park in the spring, when all the flowers bloom, the weather gets nice, and the people flock back to the grass, listening to street musicians and watching children chase pigeons. Since we didn’t get to see it in the spring this year, I want to create a scene of Washington Square Park in the spring. I wanted the scene to appear 3D, as if you could almost really be there.
+
+The second location I will be drawing is the East Village; more specifically, the roofs. Especially during this pandemic, roofs have become especially valued as the only outdoor space some New Yorkers have. Watching New Yorkers adapt most of their activities to rooftops is fascinating; it’s a collection of the world’s most unique individuals left with nothing but the endless possibilities of their creativity. One of my favorite things to do on my rooftop is watch the sunset, so I wanted the viewer of this drawing to be able to do that too.
+
+The third location I will be drawing is Astor Place. Along with being close to NYU’s campus, it is also a transportation hub, with the 4 and 6 lines running through its station. It’s also one of my favorite places to eat, study, and hang out in the summer. One of my favorite memories from Astor Place is running through at night with my friends and spinning the cube in the middle. I want the viewer of this drawing to be able to do that too. 
