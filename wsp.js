@@ -36,19 +36,6 @@
      requestAnimationFrame(animateFountain);
 
      $('#branch').click(petalFall);
-
-     //     $('#back-button').click(function () {
-     //         $('#environment').fadeOut();
-     //     });
-     
-     $('#back-button').click(function(e) {
-        e.preventDefault();
-        href = $(this).attr('href');
-         $("#audio1").animate({volume: 0}, 800);
-        $('#environment').fadeOut(800, function() {
-            window.location = href;
-        });
-    });
  });
 
  let time = 0;

@@ -1,0 +1,144 @@
+@font-face {
+    font-family: Hot Rod;
+    src: url(HotRod.ttf);
+}
+
+body {
+    display: none;
+}
+
+h1 {
+    font-size: 6em;
+    font-family: Hot Rod, serif;
+    font-weight: 100;
+    margin: 0;
+}
+
+p {
+    font-family: Hot Rod, serif;
+}
+
+a {
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    letter-spacing: 2px;
+}
+
+#container {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#header {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-text p {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.3em;
+}
+
+#new-york {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+}
+
+#new-york section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#new-york section img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+#arch {
+    z-index: 3;
+}
+
+#cube,
+#building {
+    z-index: 2;
+}
+
+#arch img,
+#cube img,
+#building img {
+    transform-style: preserve-3d;
+    transition: 0.2s;
+}
+
+#arch-img {
+    transform-origin: 45.2% 48.5%;
+}
+
+#cube-img {
+    transform-origin: 56.1% 47%;
+}
+
+#building-img {
+    transform-origin: 65.6% 50.5%;
+}
+
+#hover-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    /*     height: 50px;*/
+    text-align: center;
+    color: white;
+    z-index: 5;
+    /*    border: 1px solid white;*/
+    display: none;
+    padding: 0;
+    /*     background: yellow;*/
+}
+
+#hover-text p {
+    margin: 0;
+}
+
+#hover-text #triangle {
+    width: 10px;
+    margin: 0 auto;
+    object-fit: contain;
+    position: relative;
+}
+
+#background {
+    background: url(navigation/map-01.png);
+    z-index: 1;
+}
+
+
+/*
+#container div {
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+}*/

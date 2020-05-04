@@ -4,63 +4,44 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Drawing on the Web</title>
-    <style>
-        body {
-            font-family: 'Bebas Neue';
-           display: none;
-        }
-        
-        h1 {
-            font-size: 80px;
-            text-align: center;
-            padding-top: 100px;
-        }
-        
-        a {
-            color: black;
-            font-size: 30px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        
-        a:hover {
-            letter-spacing: 2px;
-        }
-        
-        #container {
-            display: flex;
-            width: 80%;
-            margin: 100px auto;
-        }
-        
-        #container div {
-            padding: 10px;
-            width: 30%;
-            text-align: center;
-        }
-    </style>
+    <title>Claire Wang Final Project</title>
+    <link rel="stylesheet" type="text/css" href="navigation.css">
 </head>
 
 <body>
-    <h1>New York City</h1>
     <div id="container">
-        <div>
-            <a href="wasquapa.html">Washington Square Park</a>
+        <div id="header">
+            <div id="header-text">
+                <h1>NEW<br/>YORK<br/>CITY</h1>
+                <p>by Claire Wang</p>
+            </div>
         </div>
-        <div>
-            <a href="eastvillage.html">East Village</a>
-        </div>
-        <div>
-            <a href="astorplace.html">Astor Place</a>
+        <div id="new-york">
+            <section id="arch">
+                <div id="hover-text">
+                    <p>Washington Square Park</p>
+                    <img src="navigation/triangle.png" id="triangle">
+                </div>
+                <img src="navigation/arch-01.png" usemap="#image-map" id="arch-img">
+
+                <map name="image-map" id="image-map">
+                    <area target="_self" alt="" title="" href="wasquapa.html" coords="1010,1125,1174,1298" shape="rect" style="cursor: pointer;" id="archMap">
+                    <area target="_self" alt="" title="" href="eastvillage.html" coords="1650,1347,1522,1178" shape="rect" style="cursor: pointer;" id="building-map">
+                    <area target="_self" alt="" title="" href="astorplace.html" coords="1356,1038,1285,1082,1307,1191,1399,1191,1409,1129,1409,1078,1371,1046" shape="poly" style="cursor: pointer;" id="cube-map">
+                </map>
+            </section>
+            <section id="cube">
+                <img src="navigation/cube-01.png" id="cube-img">
+            </section>
+            <section id="building">
+                <img src="navigation/building-01.png" id="building-img">
+            </section>
+            <section id="background"></section>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-        $(document).ready(function () { 
-            $('body').fadeIn(800);
-        });
-    </script>
+    <script src="wasquapa/imageMapResizer.min.js"></script>
+    <script src="navigation.js"></script>
 </body>
 
 </html>

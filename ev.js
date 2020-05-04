@@ -2,6 +2,7 @@ let didScroll = false;
 let isTransitioning = true;
 
 $(document).ready(function () {
+    let sound = true;
     $("#audio1")[0].volume = 0;
     
     let delay = 0.3;
@@ -12,7 +13,6 @@ $(document).ready(function () {
     });
 
     $('map').imageMapResize();
-
 
     setTimeout(function () {
         $('#background1').slideDown();
@@ -29,16 +29,6 @@ $(document).ready(function () {
     }, 2000);
 
     requestAnimationFrame(onScroll);
-    
-    $('#back-button').click(function(e) {
-        e.preventDefault();
-        href = $(this).attr('href');
-         $("#audio1").animate({volume: 0}, 800);
-        $('#environment').fadeOut(800, function() {
-            window.location = href;
-        });
-    });
-
 });
 
 const scrollLayers = [0, 2000, 3000, 5000, 6000, 8000];

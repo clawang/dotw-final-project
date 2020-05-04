@@ -43,22 +43,11 @@
              $('#content').children().each(function () {
                  $(this).removeClass('loaded');
                  $(this).css('opacity', '1');
-                 $(this).css('transform', 'translate3d( 0, 0,' + (scroll / 80 * index) + 'px ) rotateX(0deg)');
+                 $(this).css('transform', 'translate3d( 0, 0,' + (scroll / 120 * index) + 'px ) rotateX(0deg)');
                  index--;
              });
          }
      });
-
-//     requestAnimationFrame(animateFountain);
-
-     $('#back-button').click(function(e) {
-        e.preventDefault();
-        href = $(this).attr('href');
-         $("#audio1").animate({volume: 0}, 800);
-        $('#environment').fadeOut(800, function() {
-            window.location = href;
-        });
-    });
  });
 
 function resizeCube() {
