@@ -175,6 +175,14 @@ blow-soft-right 10s ease-in;*/
     left: 20px;
 }
 
+#audio1 {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+}
+
 #background {
     position: fixed;
     display: none;

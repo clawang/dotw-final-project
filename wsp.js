@@ -6,6 +6,8 @@
          $(this).css('animation-delay', delays[index] + 's');
          index++;
      });
+     
+    $("#audio1")[0].volume = 0;
 
      $('map').imageMapResize();
 
@@ -13,6 +15,7 @@
      setTimeout(function () {
          $('#background').slideDown();
          isTransitioning = false;
+         $("#audio1").animate({volume: 1}, 3000);
      }, 2200);
 
      $(window).scroll(function () {
@@ -37,11 +40,15 @@
      //     $('#back-button').click(function () {
      //         $('#environment').fadeOut();
      //     });
-     window.onbeforeunload = function (e) {
-         setTimeout(function () {
-             $('#environment').fadeOut();
-         }, 2000);
-     }
+     
+     $('#back-button').click(function(e) {
+        e.preventDefault();
+        href = $(this).attr('href');
+         $("#audio1").animate({volume: 0}, 800);
+        $('#environment').fadeOut(800, function() {
+            window.location = href;
+        });
+    });
  });
 
  let time = 0;

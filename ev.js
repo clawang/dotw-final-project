@@ -2,6 +2,8 @@ let didScroll = false;
 let isTransitioning = true;
 
 $(document).ready(function () {
+    $("#audio1")[0].volume = 0;
+    
     let delay = 0.3;
     $('#content').children().each(function () {
         $(this).addClass('loaded');
@@ -16,6 +18,7 @@ $(document).ready(function () {
         $('#background1').slideDown();
         $('#fifth').slideDown();
         $('#sixth').slideDown();
+        $("#audio1").animate({volume: 0.8}, 3000);
     }, 1700);
 
     setTimeout(function () {
@@ -26,6 +29,15 @@ $(document).ready(function () {
     }, 2000);
 
     requestAnimationFrame(onScroll);
+    
+    $('#back-button').click(function(e) {
+        e.preventDefault();
+        href = $(this).attr('href');
+         $("#audio1").animate({volume: 0}, 800);
+        $('#environment').fadeOut(800, function() {
+            window.location = href;
+        });
+    });
 
 });
 
