@@ -22,13 +22,20 @@
          $("#audio1").animate({volume: 0.7}, 2000);
      }, 1900);
      
+     setTimeout(function () {
+         $('.cube-container').addClass('blinking');
+     }, 8000);
+     
      let isSpinning = false;
      $('.cube').click(function() {
+         $('.cube-container').removeClass('blinking');
         if(!isSpinning) {
             $('.cube').addClass('spinning');
+            $('.cube').css('cursor', 'default');
             isSpinning = true;
             setTimeout(function() {
                 $('.cube').removeClass('spinning');
+                $('.cube').css('cursor', 'pointer');
                 isSpinning = false;
             }, 20000);
         } 
@@ -51,20 +58,23 @@
  });
 
 function resizeCube() {
-    let window = $( document ).width();
-     let cubeWidth = window / 1440;
+    let width = $( document ).width();
+//    console.log($(window).height());
+//    console.log(width);
+    let cubeWidth = width / 1440;
+    let cubeHeight = $(window).height() / 765;
+    let scale;
+    if(width > $(window).height()) {
+        scale = cubeWidth;
+    } else {
+        scale = Math.max(cubeWidth, cubeHeight);
+    }
     const offset = $('#content').offset().top + cubeWidth * 50;
-    console.log($('#content').offset().top);
-    console.log(offset);
-    const position = 100 * cubeWidth + 50;
+    const position = 25 * scale + 125;
 
-     $('.cube-container').css('transform', 'scale('+cubeWidth+')');
-    $('.cube-container').css('left', (window / 2 - ($('.cube').innerWidth()) / 2) + 'px');
-    $('.wrapper').css('bottom', offset + 'px');
-}
-
-function spinCube() {
-    
+     $('.cube-container').css('transform', 'scale('+scale+')');
+    $('.cube-container').css('left', (width / 2 - ($('.cube').innerWidth()) / 2) + 'px');
+//    $('.wrapper').css('bottom', offset + 'px');
 }
 
  function getRandom(min, max) {

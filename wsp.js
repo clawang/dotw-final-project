@@ -17,6 +17,10 @@
          isTransitioning = false;
          $("#audio1").animate({volume: 1}, 3000);
      }, 2200);
+     
+     setTimeout(function () {
+         $('#branch').addClass('blinking');
+     }, 8000);
 
      $(window).scroll(function () {
          var scroll = $(window).scrollTop();
@@ -35,7 +39,7 @@
 
      requestAnimationFrame(animateFountain);
 
-     $('#branch').click(petalFall);
+     $('#branch-map').click(petalFall);
  });
 
  let time = 0;
@@ -75,6 +79,8 @@
  }
 
  function petalFall() {
+     $('#branch').removeClass('blinking');
+     
      const sways = ['sway-1', 'sway-2', 'sway-3', 'sway-4'];
 
      $('.petal').each(function () {

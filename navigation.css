@@ -3,6 +3,11 @@
     src: url(HotRod.ttf);
 }
 
+@font-face {
+    font-family: Parisien;
+    src: url(CFMetroParisien.ttf);
+}
+
 body {
     display: none;
 }
@@ -15,7 +20,9 @@ h1 {
 }
 
 p {
-    font-family: Hot Rod, serif;
+    font-family: Parisien, sans-serif;
+    font-size: 0.8em;
+    letter-spacing: 1px;
 }
 
 a {
@@ -48,7 +55,7 @@ a:hover {
 }
 
 #header-text p {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: Parisien, sans-serif;
     letter-spacing: 2px;
     font-size: 1.3em;
 }
