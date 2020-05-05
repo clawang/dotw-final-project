@@ -5,12 +5,12 @@ $(document).ready(function () {
     let sound = true;
     $("#audio1")[0].volume = 0;
 
-    let delay = 0.3;
+    let delay = 0.9;
     $(window).on("load", function () {
         $('#content').children().each(function () {
             $(this).addClass('loaded');
             $(this).css('animation-delay', delay + 's');
-            delay += 0.3;
+            delay -= 0.3;
         });
 
         setTimeout(function () {
@@ -20,7 +20,7 @@ $(document).ready(function () {
             $("#audio1").animate({
                 volume: 0.8
             }, 3000);
-        }, 1700);
+        }, 1800);
 
         setTimeout(function () {
             $('#background2').css('display', 'block');

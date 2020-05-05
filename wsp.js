@@ -1,4 +1,5 @@
-let isTransitioning = true; 
+let isTransitioning = true;
+let clicked = false;
 
 $(document).ready(function () {
      const delays = [0.5, 0.7, 0.7, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.7]
@@ -20,7 +21,10 @@ $(document).ready(function () {
          }, 2200);
 
          setTimeout(function () {
-             $('#branch').addClass('blinking');
+             if(clicked === false) {
+                $('#branch').addClass('blinking');
+                 clicked = true;
+             }
          }, 8000);
      });
 
@@ -90,6 +94,7 @@ $(document).ready(function () {
 
  function petalFall() {
      $('#branch').removeClass('blinking');
+     clicked = true;
 
      const sways = ['sway-1', 'sway-2', 'sway-3', 'sway-4'];
 
