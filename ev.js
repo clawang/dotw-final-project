@@ -4,29 +4,37 @@ let isTransitioning = true;
 $(document).ready(function () {
     let sound = true;
     $("#audio1")[0].volume = 0;
-    
+
     let delay = 0.3;
-    $('#content').children().each(function () {
-        $(this).addClass('loaded');
-        $(this).css('animation-delay', delay + 's');
-        delay += 0.3;
+    $(window).on("load", function () {
+        $('#content').children().each(function () {
+            $(this).addClass('loaded');
+            $(this).css('animation-delay', delay + 's');
+            delay += 0.3;
+        });
+
+        setTimeout(function () {
+            $('#background1').slideDown();
+            $('#fifth').slideDown();
+            $('#sixth').slideDown();
+            $("#audio1").animate({
+                volume: 0.8
+            }, 3000);
+        }, 1700);
+
+        setTimeout(function () {
+            $('#background2').css('display', 'block');
+            $('#background3').css('display', 'block');
+            $('#background4').css('display', 'block');
+            isTransitioning = false;
+        }, 2000);
     });
 
     $('map').imageMapResize();
-
-    setTimeout(function () {
-        $('#background1').slideDown();
-        $('#fifth').slideDown();
-        $('#sixth').slideDown();
-        $("#audio1").animate({volume: 0.8}, 3000);
-    }, 1700);
-
-    setTimeout(function () {
-        $('#background2').css('display', 'block');
-        $('#background3').css('display', 'block');
-        $('#background4').css('display', 'block');
-        isTransitioning = false;
-    }, 2000);
+    
+    $(window).on("scroll", function() {
+        
+    });
 
     requestAnimationFrame(onScroll);
 });
@@ -50,19 +58,19 @@ function onScroll() {
         } else if (scroll < scrollLayers[1]) {
             $('#background1').css('opacity', (scrollLayers[1] - scroll) / transition);
             $('#background2').css('opacity', 1);
-            $('#background3').css('opacity', 1);
+//            $('#background3').css('opacity', 1);
             $('#skyline1').css('opacity', (scrollLayers[1] - scroll) / transition);
             $('#skyline2').css('opacity', 1);
-            $('#skyline3').css('opacity', 1);
-            $('#skyline4').css('opacity', 1);
+//            $('#skyline3').css('opacity', 1);
+//            $('#skyline4').css('opacity', 1);
         } else if (scroll >= scrollLayers[1] && scroll < scrollLayers[2]) {
             $('#background1').css('opacity', 0);
             $('#background2').css('opacity', 1);
-            $('#background3').css('opacity', 1);
+//            $('#background3').css('opacity', 1);
             $('#skyline1').css('opacity', 0);
             $('#skyline2').css('opacity', 1);
-            $('#skyline3').css('opacity', 1);
-            $('#skyline4').css('opacity', 1);
+//            $('#skyline3').css('opacity', 1);
+//            $('#skyline4').css('opacity', 1);
         } else if (scroll >= scrollLayers[2] && scroll < scrollLayers[3]) {
             $('#background1').css('opacity', 0);
             $('#background2').css('opacity', (scrollLayers[3] - scroll) / transition);
@@ -70,7 +78,7 @@ function onScroll() {
             $('#skyline1').css('opacity', 0);
             $('#skyline2').css('opacity', (scrollLayers[3] - scroll) / transition);
             $('#skyline3').css('opacity', 1);
-            $('#skyline4').css('opacity', 1);
+//            $('#skyline4').css('opacity', 1);
         } else if (scroll >= scrollLayers[3] && scroll < scrollLayers[4]) {
             $('#background1').css('opacity', 0);
             $('#background2').css('opacity', 0);
@@ -79,7 +87,7 @@ function onScroll() {
             $('#skyline1').css('opacity', 0);
             $('#skyline2').css('opacity', 0);
             $('#skyline3').css('opacity', 1);
-            $('#skyline4').css('opacity', 1);
+//            $('#skyline4').css('opacity', 1);
             $('#moon').css('opacity', 0);
         } else if (scroll >= scrollLayers[4] && scroll < scrollLayers[5]) {
             $('#background1').css('opacity', 0);

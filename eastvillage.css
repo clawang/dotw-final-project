@@ -270,6 +270,7 @@ body {
 }
 
 #scroll-proxy {
+    position: relative;
     height: 9000px;
 }
 

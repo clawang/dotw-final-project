@@ -1,5 +1,9 @@
   $(document).ready(function () {
-      $('body').fadeIn(800);
+      $(window).on("load", function () {
+        $('body').fadeIn(800, function () {
+             $('map').imageMapResize();
+        });
+      });
 
       $('map').imageMapResize();
 

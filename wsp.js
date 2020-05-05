@@ -1,40 +1,36 @@
- $(document).ready(function () {
+let isTransitioning = true; 
+
+$(document).ready(function () {
      const delays = [0.5, 0.7, 0.7, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.7]
      let index = 0;
-     $('#content').children().each(function () {
-         $(this).addClass('loaded');
-         $(this).css('animation-delay', delays[index] + 's');
-         index++;
+
+     $(window).on("load", function () {
+         $('#content').children().each(function () {
+             $(this).addClass('loaded');
+             $(this).css('animation-delay', delays[index] + 's');
+             index++;
+         });
+
+         setTimeout(function () {
+             $('#background').slideDown();
+             isTransitioning = false;
+             $("#audio1").animate({
+                 volume: 1
+             }, 3000);
+         }, 2200);
+
+         setTimeout(function () {
+             $('#branch').addClass('blinking');
+         }, 8000);
      });
-     
-    $("#audio1")[0].volume = 0;
+
+     $("#audio1")[0].volume = 0;
 
      $('map').imageMapResize();
 
-     let isTransitioning = true;
-     setTimeout(function () {
-         $('#background').slideDown();
-         isTransitioning = false;
-         $("#audio1").animate({volume: 1}, 3000);
-     }, 2200);
-     
-     setTimeout(function () {
-         $('#branch').addClass('blinking');
-     }, 8000);
 
      $(window).scroll(function () {
-         var scroll = $(window).scrollTop();
-         let index = 9;
-         if (isTransitioning) {
-             $(document).scrollTop(0);
-         } else {
-             $('#content').children().each(function () {
-                 $(this).removeClass('loaded');
-                 $(this).css('opacity', '1');
-                 $(this).css('transform', 'translate3d( 0, 0,' + (scroll / 80 * index) + 'px ) rotateX(0deg)');
-                 index--;
-             });
-         }
+
      });
 
      requestAnimationFrame(animateFountain);
@@ -74,13 +70,27 @@
      }
 
      time = (time + 1) % 120;
+
+     var scroll = $(window).scrollTop();
+     let index = 9;
+     if (isTransitioning) {
+         $(document).scrollTop(0);
+     } else {
+         $('#content').children().each(function () {
+             $(this).removeClass('loaded');
+             $(this).css('opacity', '1');
+             $(this).css('transform', 'translate3d( 0, 0,' + (scroll / 80 * index) + 'px ) rotateX(0deg)');
+             index--;
+         });
+     }
+
      requestAnimationFrame(animateFountain);
      //                console.log(time);
  }
 
  function petalFall() {
      $('#branch').removeClass('blinking');
-     
+
      const sways = ['sway-1', 'sway-2', 'sway-3', 'sway-4'];
 
      $('.petal').each(function () {
